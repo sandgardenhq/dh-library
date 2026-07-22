@@ -1,0 +1,25 @@
+header:
+  title: Browse the library.
+  description: The guides are generated and maintained by Doc Holiday, the AI-native software platform for crystal-clear documentation and release notes.
+
+items:
+  - icon: menu_book
+    title: DSPy Field Guide
+    description: The DSPy codebase, explained at the concept level — Signature, Module, Adapter, and the LM layer, plus caching, compilation, the proposer, and streaming.
+    link:
+      label: Read the guide
+      url: "dspy/the-big-picture/"
+
+  - icon: menu_book
+    title: Strix Field Guide
+    description: The Strix codebase, explained at the concept level — an autonomous pentest app built on the OpenAI Agents SDK, from the agent graph to the Docker sandbox and the finding-to-report pipeline.
+    link:
+      label: Read the guide
+      url: "strix/the-big-picture/"
+
+  - icon: build/doc-holiday
+    title: Doc Holiday
+    description: Doc Holiday is the AI-native software platform that automatically transforms code commits and product specs into crystal-clear documentation and release notes that stay up-to-date while you stay out late.
+    link:
+      label: Learn more
+      url: "https://doc.holiday/"

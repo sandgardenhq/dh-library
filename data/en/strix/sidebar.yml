@@ -1,0 +1,27 @@
+# Sidebar structure for the docs section. The theme builds each link as
+# /docs/<urlize(title)>/ — so every `title` here must urlize to the same slug
+# as the corresponding page's `url` front matter.
+- title: Orientation
+  pages:
+    - title: The Big Picture
+    - title: Anatomy of a Scan
+
+- title: The Agent System
+  pages:
+    - title: The Graph of Agents
+    - title: The Agent Loop
+
+- title: The Runtime
+  pages:
+    - title: The Docker Sandbox
+    - title: The Toolkit Layer
+    - title: Traffic Interception
+
+- title: Output and Observability
+  pages:
+    - title: Telemetry Logging and Usage
+    - title: From Finding to Report
+
+- title: Meta
+  pages:
+    - title: About This Site

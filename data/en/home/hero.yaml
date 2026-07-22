@@ -1,0 +1,18 @@
+# The wordmark SVG is disabled (empty string, not deleted, so the E25DX theme
+# default doesn't merge back in) — the header logo already carries the name.
+svg: ""
+
+badge: Written by Doc Holiday
+
+# The <span> gets the gradient text treatment (see hero.css).
+title: Open-source codebases, explained at the <span>concept level</span>.
+
+description: The Doc Holiday Library is a collection of field guides to open-source projects — why each subsystem exists, how the pieces relate, and where to look in the code. Each guide is written by exploring the source directly, page by page.
+
+btn_primary:
+  label: Browse DSPy
+  url: dspy/the-big-picture/
+
+btn_secondary:
+  label: Browse Strix
+  url: strix/the-big-picture/

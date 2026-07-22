@@ -1,0 +1,69 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One concurrent Pages deployment; don't cancel in-flight production deploys.
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  # Pinned: newer Hugo emits deprecation warnings from the E25DX theme
+  # (.Site.Data in 0.156, .Site.LanguageCode in 0.158). Bump alongside a theme update.
+  HUGO_VERSION: 0.155.0
+  # The PUBLIC serving path. This site lives behind the doc.holiday netlify proxy,
+  # which rewrites /library/* → <this repo's Pages URL>/:splat with status 200 — so
+  # the browser stays on doc.holiday and every internal link must be /library/-rooted.
+  # Deliberately NOT actions/configure-pages base_url (that is the github.io/dh-library
+  # project URL); building with that would produce /dh-library/-rooted links that break
+  # once proxied under /library/.
+  PUBLIC_BASE_URL: https://doc.holiday/library/
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with theme submodule)
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          fetch-depth: 0 # full history; required by enableGitInfo
+
+      - name: Setup Hugo (extended, pinned)
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      # configure-pages is still required to mint the Pages deployment/OIDC token,
+      # but its base_url output is intentionally ignored — see PUBLIC_BASE_URL above.
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build
+        run: hugo --gc --minify --baseURL "${{ env.PUBLIC_BASE_URL }}"
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

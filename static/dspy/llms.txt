@@ -1,0 +1,23 @@
+# DSPy Field Guide
+
+> A concept-level field guide to the DSPy codebase, written by Doc Holiday
+> (https://doc.holiday) by exploring the DSPy source directly. Each page explains why a
+> subsystem exists, its central abstractions, and how it relates to its neighbors.
+> Every doc page is also served as plain markdown at <page-url>/index.md.
+
+## Pages
+
+- [The Big Picture](https://doc.holiday/library/dspy/the-big-picture/): the Signature→Module→Adapter→LM spine
+- [Anatomy of a Call](https://doc.holiday/library/dspy/anatomy-of-a-call/): end-to-end trace of one module call
+- [The LM Layer](https://doc.holiday/library/dspy/the-lm-layer/): how a model string becomes a provider request
+- [Caching](https://doc.holiday/library/dspy/caching/): the cache, its key, and its footguns
+- [What Compile Does](https://doc.holiday/library/dspy/what-compile-does/): what optimizers actually mutate
+- [The Proposer](https://doc.holiday/library/dspy/the-proposer/): how DSPy writes instruction candidates
+- [Streaming](https://doc.holiday/library/dspy/streaming/): token streaming vs typed parsing
+- [Production](https://doc.holiday/library/dspy/production/): callbacks, usage tracking, parallelism
+- [About This Site](https://doc.holiday/library/dspy/about-this-site/): scope, audience, provenance
+
+## See also
+
+- Official DSPy documentation: https://dspy.ai/
+- DSPy source: https://github.com/stanfordnlp/dspy

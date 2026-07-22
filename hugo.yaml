@@ -1,0 +1,112 @@
+# Site config for the Doc Holiday Library — a single Hugo site hosting every
+# leadgen field guide as its own content section (content/en/<project>/…).
+# The E25DX theme routes sidebars, links, and the section menu off .Section, so
+# adding a project = a new content/en/<project>/ dir + data/en/<project>/sidebar.yml
+# + a menu entry whose identifier matches the section name.
+#
+# baseURL is the PUBLIC path the site is served at (doc.holiday/library/), NOT the
+# GitHub Pages URL: the netlify proxy rewrites /library/* → <pages>/dh-library/*
+# with status 200, so the browser stays on doc.holiday and every internal link
+# must be /library/-rooted. `hugo server` ignores the host; pass --baseURL to test
+# the subpath locally.
+baseURL: https://doc.holiday/library/
+
+theme: E25DX
+
+enableGitInfo: true
+enableRobotsTXT: true
+
+disableKinds: [section, taxonomy, term]
+
+defaultContentLanguage: en
+
+languages:
+  en:
+    weight: 1
+    label: English
+    locale: en-US
+    contentDir: content/en
+    title: Doc Holiday Library
+    params:
+      description: Concept-level field guides to open-source codebases, written by Doc Holiday
+
+services:
+  googleAnalytics:
+    ID: ~
+
+markup:
+  highlight:
+    noClasses: false
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      attribute:
+        block: true
+        title: true
+    # Relative *.md cross-links between the generated pages are resolved to
+    # page URLs by layouts/_markup/render-link.html (overrides the theme hook).
+  tableOfContents:
+    pre: <nav id="TableOfContents" aria-label="Table of Contents">
+    post: </nav>
+
+# Serves each doc page as plain Markdown at <page>/index.md, alongside the
+# normal HTML at <page>/index.html, for LLMs to fetch/index directly.
+outputFormats:
+  markdown:
+    mediaType: text/markdown
+    baseName: index
+    isPlainText: true
+    isHTML: false
+
+outputs:
+  page:
+    - html
+    - markdown
+
+params:
+  project:
+    startYear: ~
+    presentYear: 2026
+    repo:
+      # Per-section overrides live in each project's page front matter / logo;
+      # this is the library's own home.
+      main: https://github.com/sandgardenhq/dh-library
+    themeColor:
+      light: '#ffffff'
+      dark: '#14161a'
+
+  author:
+    name: doc.holiday
+    url: https://doc.holiday
+
+  logo: /logo.svg
+
+  pagination:
+    size: 6
+
+  enableOGXSEO: false
+  enablePageFind: false
+
+menus:
+  main:
+    # Identifiers MUST match the content section names (dspy, strix): the
+    # left-sidebar and header active-state look up the menu entry by .Section.
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+      params:
+        icon: home
+    - identifier: dspy
+      name: DSPy
+      url: /dspy/the-big-picture/
+      weight: 2
+      params:
+        icon: menu_book
+    - identifier: strix
+      name: Strix
+      url: /strix/the-big-picture/
+      weight: 3
+      params:
+        icon: menu_book

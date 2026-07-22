@@ -1,0 +1,15 @@
+# Per-project chrome, keyed by content section (.Section). The header and
+# left-sidebar overrides look up the current project here; the library home
+# (empty .Section) falls back to the site defaults (logo.svg / site.Title).
+#
+# logo paths are slash-less on purpose: they are piped through `relURL`, which
+# leaves a leading-slash path host-relative and so would drop the /library/
+# Pages subpath (the G1 leading-slash gotcha). Slash-less → resolved under baseURL.
+dspy:
+  name: DSPy Field Guide
+  logo: dspy-logo.svg
+  repo: https://github.com/stanfordnlp/dspy
+strix:
+  name: Strix Field Guide
+  logo: strix-logo.svg
+  repo: https://github.com/usestrix/strix

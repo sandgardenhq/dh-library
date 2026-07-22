@@ -1,0 +1,25 @@
+# Strix Field Guide
+
+> A concept-level field guide to the Strix codebase, written by Doc Holiday
+> (https://doc.holiday) by exploring the Strix source directly. Strix is an open-source
+> autonomous AI penetration-testing tool built on the OpenAI Agents SDK. Each page explains
+> why a subsystem exists, its central abstractions, and how it relates to its neighbors.
+> Every doc page is also served as plain markdown at <page-url>/index.md.
+
+## Pages
+
+- [The Big Picture](https://doc.holiday/library/strix/the-big-picture/): the map — Strix as a pentest app built on the OpenAI Agents SDK, and the shape of one scan
+- [Anatomy of a Scan](https://doc.holiday/library/strix/anatomy-of-a-scan/): one `strix` run traced end to end, including how the agent is prompted to behave like a pentester
+- [The Graph of Agents](https://doc.holiday/library/strix/the-graph-of-agents/): how the AgentCoordinator grows a tree of agents and how they coordinate through shared sessions
+- [The Agent Loop](https://doc.holiday/library/strix/the-agent-loop/): what "think-plan-act-observe" really is — the SDK Runner loop plus Strix's lifecycle-gating, budget, and parking
+- [The Docker Sandbox](https://doc.holiday/library/strix/the-docker-sandbox/): the per-scan Docker container — the isolation boundary, its lifecycle, and the SDK-subclass customizations
+- [The Toolkit Layer](https://doc.holiday/library/strix/the-toolkit-layer/): the two tool families — host-side function tools vs in-container SDK capabilities — and how the model reaches them
+- [Traffic Interception](https://doc.holiday/library/strix/traffic-interception/): why all container traffic flows through the Caido proxy, and how the browser rides on it
+- [Telemetry Logging and Usage](https://doc.holiday/library/strix/telemetry-logging-and-usage/): what Strix records about a run — analytics, per-scan logs, and the LLM usage/cost ledger
+- [From Finding to Report](https://doc.holiday/library/strix/from-finding-to-report/): the vulnerability report model — how findings are captured, deduped, and written out as artifacts
+- [About This Site](https://doc.holiday/library/strix/about-this-site/): scope, audience, provenance
+
+## See also
+
+- Official Strix documentation: https://docs.strix.ai
+- Strix source: https://github.com/usestrix/strix
