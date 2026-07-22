@@ -27,6 +27,12 @@
 			{{ end }}
 		</footer>
 		{{ end }}
+
+		{{ with .link }}
+		<footer>
+			<a class="btn btn-primary" href="{{ .url }}" {{ if (urls.Parse .url).IsAbs }}rel="external"{{ end }}>{{ .label }}</a>
+		</footer>
+		{{ end }}
 	</div>
 	{{ end }}
 

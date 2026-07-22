@@ -8,8 +8,7 @@
 		<img height="40px" src="{{ (or (and $proj $proj.logo) "logo.svg") | relURL }}" alt="{{ or (and $proj $proj.name) site.Title }}">
 	</a>
 
-	{{ $sectionMenu := index (where site.Menus.main "Identifier" page.Section) 0 }}
-	<nav aria-label="{{ $sectionMenu.Name }} Pages">
+	<nav aria-label="{{ or (and $proj $proj.name) site.Title }} Pages">
 		{{ $data := index site.Data site.Language.Lang page.Section "sidebar" }}
 
 		{{- $url := split page.RelPermalink "/" -}}

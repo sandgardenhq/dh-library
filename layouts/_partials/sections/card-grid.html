@@ -1,0 +1,34 @@
+{{- /*
+  Project override of the E25DX card-grid partial. The whole card is a click
+  target for its link (stretched-link pattern): the footer anchor carries a
+  `card-cover-link` class whose ::after overlay spans the card (card-grid.css).
+  Keeps a single valid anchor per card — no nested/duplicate links — while the
+  button stays as the visible affordance. External links open in a new tab.
+*/ -}}
+<section class="card-grid-section">
+	<header class="card-grid-header">
+		<h2>{{ .header.title }}</h2>
+		<p>{{ .header.description }}</p>
+	</header>
+
+	<div class="card-grid-body">
+
+		{{ range .items }}
+		<div class="card-grid-card">
+			<header>
+				<span>{{ partial "icon.html" .icon }}</span>
+				<h3>{{ .title }}</h3>
+			</header>
+			<p>{{ .description | markdownify }}</p>
+			{{ with .link }}
+			<footer>
+				<a class="btn card-cover-link" href="{{ .url }}" {{ if (urls.Parse .url).IsAbs }}rel="external" target="_blank"{{ end }}>
+					{{ .label }}
+				</a>
+			</footer>
+			{{ end }}
+		</div>
+		{{ end }}
+
+	</div>
+</section>

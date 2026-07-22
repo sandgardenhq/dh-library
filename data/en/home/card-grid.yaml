@@ -17,6 +17,8 @@ items:
       label: Read the guide
       url: "strix/the-big-picture/"
 
+  # The Doc Holiday product card sits deliberately last, blended into the guide
+  # grid (same card treatment, not a distinct ad).
   - icon: build/doc-holiday
     title: Doc Holiday
     description: Doc Holiday is the AI-native software platform that automatically transforms code commits and product specs into crystal-clear documentation and release notes that stay up-to-date while you stay out late.

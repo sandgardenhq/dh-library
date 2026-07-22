@@ -20,3 +20,11 @@ items:
     title: Complements the official docs
     description: Each project's own docs own tutorials and API reference. These guides cover the connective architecture — the subsystems and relationships the reference pages leave implicit.
     badges: [ ]
+
+  - col: col-5
+    icon: comic_bubble
+    title: Have an OSS project you want to see here?
+    description: Tell us which codebase deserves a field guide and we'll take a look.
+    link:
+      label: Email us
+      url: "mailto:engineering@sandgarden.com"

@@ -9,10 +9,9 @@ title: Open-source codebases, explained at the <span>concept level</span>.
 
 description: The Doc Holiday Library is a collection of field guides to open-source projects — why each subsystem exists, how the pieces relate, and where to look in the code. Each guide is written by exploring the source directly, page by page.
 
-btn_primary:
-  label: Browse DSPy
-  url: dspy/the-big-picture/
-
-btn_secondary:
-  label: Browse Strix
-  url: strix/the-big-picture/
+# No hero buttons — the guide cards sit directly below (see card-grid.yaml).
+# Blanked (not deleted) so the E25DX theme's default btn_primary/btn_secondary
+# ("Get Started" / "Contribute") don't merge back in; the hero partial guards on
+# btn_primary, so empty strings render no controls.
+btn_primary: ""
+btn_secondary: ""

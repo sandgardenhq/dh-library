@@ -90,23 +90,12 @@ params:
 
 menus:
   main:
-    # Identifiers MUST match the content section names (dspy, strix): the
-    # left-sidebar and header active-state look up the menu entry by .Section.
+    # Single Home entry only — a per-project menu would not scale past ~10 guides.
+    # Project chrome (logo/name/repo) comes from data/en/projects.yaml keyed by
+    # .Section, so the sidebar no longer depends on a per-section menu entry.
     - identifier: home
       name: Home
       url: /
       weight: 1
       params:
         icon: home
-    - identifier: dspy
-      name: DSPy
-      url: /dspy/the-big-picture/
-      weight: 2
-      params:
-        icon: menu_book
-    - identifier: strix
-      name: Strix
-      url: /strix/the-big-picture/
-      weight: 3
-      params:
-        icon: menu_book

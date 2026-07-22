@@ -20,8 +20,15 @@
 		<p>{{ . | markdownify }}</p>
 	</div>
 	{{ end }}
+	{{/* Controls rendered only when btn_primary is set, so a button-less hero
+	     (the library landing, whose guide cards sit directly below) emits no
+	     empty <a> tags. */}}
+	{{ with .btn_primary }}
 	<div class="hero-controls">
-		<a href="{{ .btn_primary.url | relLangURL }}" class="btn btn-primary">{{ .btn_primary.label }}</a>
-		<a href="{{ .btn_secondary.url | relLangURL }}" class="btn btn-outline" {{ if (urls.Parse .btn_secondary.url).IsAbs }}target="_blank"{{ end }}>{{ .btn_secondary.label }}</a>
+		<a href="{{ .url | relLangURL }}" class="btn btn-primary">{{ .label }}</a>
+		{{ with $.btn_secondary }}
+		<a href="{{ .url | relLangURL }}" class="btn btn-outline" {{ if (urls.Parse .url).IsAbs }}target="_blank"{{ end }}>{{ .label }}</a>
+		{{ end }}
 	</div>
+	{{ end }}
 </section>
