@@ -1,0 +1,25 @@
+# Dify Field Guide
+
+> A concept-level field guide to the Dify platform's internals, written by Doc Holiday
+> (https://doc.holiday) by exploring the Dify and Graphon sources directly. Each page
+> explains why a subsystem exists, its central abstractions, and how it relates to its
+> neighbors. Every doc page is also served as plain markdown at <page-url>/index.md.
+
+## Pages
+
+- [The Big Picture](https://doc.holiday/library/dify/the-big-picture/): the map of the whole platform
+- [Anatomy of a Workflow Run](https://doc.holiday/library/dify/anatomy-of-a-workflow-run/): end-to-end trace of one run, HTTP to SSE
+- [Inside the Graph Engine](https://doc.holiday/library/dify/inside-the-graph-engine/): Graphon's queue-and-worker execution model
+- [The Variable System](https://doc.holiday/library/dify/the-variable-system/): the VariablePool and how data moves between nodes
+- [Parallel Iteration and Loops](https://doc.holiday/library/dify/parallel-iteration-and-loops/): child engines, concurrency, error modes
+- [Pause, Resume, and Run State](https://doc.holiday/library/dify/pause-resume-and-run-state/): what a run persists and how it resumes
+- [The Model Runtime](https://doc.holiday/library/dify/the-model-runtime/): one facade over every model provider
+- [The RAG Pipeline](https://doc.holiday/library/dify/the-rag-pipeline/): from uploaded document to retrieved context
+- [The Plugin System](https://doc.holiday/library/dify/the-plugin-system/): the plugin daemon and its runtimes
+- [About This Site](https://doc.holiday/library/dify/about-this-site/): scope, audience, provenance
+
+## See also
+
+- Official Dify documentation: https://docs.dify.ai/
+- Dify source: https://github.com/langgenius/dify
+- Graphon (the extracted workflow engine): https://github.com/langgenius/graphon

@@ -1,0 +1,24 @@
+# browser-use Field Guide
+
+> A concept-level field guide to the browser-use codebase, written by Doc Holiday
+> (https://doc.holiday) by exploring the browser-use source directly. Each page explains
+> why a subsystem exists, its central abstractions, and how it relates to its neighbors.
+> Every doc page is also served as plain markdown at <page-url>/index.md.
+
+## Pages
+
+- [The Big Picture](https://doc.holiday/library/browser-use/the-big-picture/): the map of the whole library
+- [Anatomy of a Step](https://doc.holiday/library/browser-use/anatomy-of-a-step/): one agent step traced end to end
+- [The Event Bus and Watchdogs](https://doc.holiday/library/browser-use/the-event-bus-and-watchdogs/): the event-driven core that operates the browser
+- [How the Agent Sees the Page](https://doc.holiday/library/browser-use/how-the-agent-sees-the-page/): from live DOM to the indexed element list the LLM reads
+- [The CDP Execution Layer](https://doc.holiday/library/browser-use/the-cdp-execution-layer/): raw Chrome DevTools Protocol — targets, sessions, synthesized input
+- [The Tools and Action Registry](https://doc.holiday/library/browser-use/the-tools-and-action-registry/): the action vocabulary and its three projections
+- [The LLM Layer](https://doc.holiday/library/browser-use/the-llm-layer/): one protocol over every model provider
+- [Agent Memory and State](https://doc.holiday/library/browser-use/agent-memory-and-state/): the prompt window, the history record, and the scratchpad filesystem
+- [MCP Both Ways](https://doc.holiday/library/browser-use/mcp-both-ways/): browser-use as an MCP server and as an MCP client
+- [About This Site](https://doc.holiday/library/browser-use/about-this-site/): scope, audience, provenance
+
+## See also
+
+- Official browser-use documentation: https://docs.browser-use.com/open-source/introduction
+- browser-use source: https://github.com/browser-use/browser-use

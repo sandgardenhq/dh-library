@@ -1,0 +1,19 @@
+# n8n Field Guide
+
+> A concept-level field guide to the n8n codebase, written by Doc Holiday
+> (https://doc.holiday) by exploring the n8n source directly. Each page explains
+> why a subsystem exists, its central abstractions, and how it actually behaves at
+> runtime. Every doc page is also served as plain markdown at <page-url>/index.md.
+
+## Pages
+
+- [The Big Picture](https://doc.holiday/library/n8n/the-big-picture/): the map of the whole platform
+- [Anatomy of an Execution](https://doc.holiday/library/n8n/anatomy-of-an-execution/): one workflow execution traced end to end
+- [How the Engine Decides What Runs Next](https://doc.holiday/library/n8n/how-the-engine-decides-what-runs-next/): the scheduling algorithm — the node stack, v0 vs v1 ordering, joins, dead branches
+- [The Canvas Is Not the Execution](https://doc.holiday/library/n8n/the-canvas-is-not-the-execution/): where the visual model and the engine's model disagree
+- [Partial Executions and Dirty Nodes](https://doc.holiday/library/n8n/partial-executions-and-dirty-nodes/): what "execute step" really does
+- [Items, Runs, and pairedItem](https://doc.holiday/library/n8n/items-runs-and-paireditem/): the data model of a run — items, runs, and item lineage
+- [Expressions and User Code](https://doc.holiday/library/n8n/expressions-and-user-code/): how {{ }} expressions and Code nodes actually evaluate
+- [Triggers, Webhooks, and Activation](https://doc.holiday/library/n8n/triggers-webhooks-and-activation/): how workflows start — editor tests vs production
+- [One Execution, Many Processes](https://doc.holiday/library/n8n/one-execution-many-processes/): queue mode, wait/resume, and spawned executions
+- [About This Site](https://doc.holiday/library/n8n/about-this-site/): scope, audience, provenance

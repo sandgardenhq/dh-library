@@ -1,0 +1,27 @@
+# Sidebar structure for the docs section. The theme builds each link as
+# /docs/<urlize(title)>/ — so every `title` here must urlize to the same slug
+# as the corresponding page's `url` front matter.
+- title: Orientation
+  pages:
+    - title: The Big Picture
+    - title: Anatomy of a Kickoff
+
+- title: Inside a Crew Run
+  pages:
+    - title: The Agent Executor Loop
+    - title: Context, Guardrails, and Retries
+    - title: The Hierarchical Process
+    - title: Threads, asyncio, and the async barrier
+
+- title: Flows and State
+  pages:
+    - title: The Flow Scheduler
+    - title: Where State Lives
+
+- title: Models
+  pages:
+    - title: The LLM Layer
+
+- title: Meta
+  pages:
+    - title: About This Site

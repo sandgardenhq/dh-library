@@ -1,0 +1,25 @@
+# CrewAI Field Guide
+
+> A concept-level field guide to the CrewAI codebase, focused on execution semantics —
+> what actually happens when a crew or flow runs. Written by Doc Holiday
+> (https://doc.holiday) by exploring the CrewAI source directly. Each page explains why a
+> subsystem exists, how it behaves at runtime, and how it relates to its neighbors.
+> Every doc page is also served as plain markdown at <page-url>/index.md.
+
+## Pages
+
+- [The Big Picture](https://doc.holiday/library/crewai/the-big-picture/): the map of Crew, Agent, Task, Process, and Flow
+- [Anatomy of a Kickoff](https://doc.holiday/library/crewai/anatomy-of-a-kickoff/): one crew.kickoff() traced end to end
+- [The Agent Executor Loop](https://doc.holiday/library/crewai/the-agent-executor-loop/): inside a single agent turn — ReAct vs native tool calling
+- [Context, Guardrails, and Retries](https://doc.holiday/library/crewai/context-guardrails-and-retries/): how task outputs become the next task's context, and where guardrails sit
+- [The Hierarchical Process](https://doc.holiday/library/crewai/the-hierarchical-process/): what the manager agent really does — delegation as tools
+- [Threads, asyncio, and the async barrier](https://doc.holiday/library/crewai/threads-asyncio-and-the-async-barrier/): the concurrency model and its sharp edges
+- [The Flow Scheduler](https://doc.holiday/library/crewai/the-flow-scheduler/): how @start/@listen/@router methods are really scheduled
+- [Where State Lives](https://doc.holiday/library/crewai/where-state-lives/): memory, flow persistence, checkpoints, and replay
+- [The LLM Layer](https://doc.holiday/library/crewai/the-llm-layer/): the LLM factory — native provider SDKs vs the LiteLLM fallback
+- [About This Site](https://doc.holiday/library/crewai/about-this-site/): scope, audience, provenance
+
+## See also
+
+- Official CrewAI documentation: https://docs.crewai.com/
+- CrewAI source: https://github.com/crewAIInc/crewAI

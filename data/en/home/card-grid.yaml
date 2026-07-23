@@ -17,6 +17,41 @@ items:
       label: Read the guide
       url: "strix/the-big-picture/"
 
+  - icon: menu_book
+    title: browser-use Field Guide
+    description: The browser-use codebase, explained at the concept level — an AI browser-automation agent, from the event bus and watchdogs to the CDP execution layer, the action registry, and how the agent sees the page.
+    link:
+      label: Read the guide
+      url: "browser-use/the-big-picture/"
+
+  - icon: menu_book
+    title: RAGFlow Field Guide
+    description: The RAGFlow codebase, explained at the concept level — a deep-document RAG engine, from the ingestion pipeline and chunking templates to the embedding layer, GraphRAG, and the canvas orchestrator.
+    link:
+      label: Read the guide
+      url: "ragflow/the-big-picture/"
+
+  - icon: menu_book
+    title: Dify Field Guide
+    description: The Dify codebase, explained at the concept level — an LLM app platform and its Graphon workflow engine, from the graph execution model and variable system to pause/resume, the model runtime, and the plugin system.
+    link:
+      label: Read the guide
+      url: "dify/the-big-picture/"
+
+  - icon: menu_book
+    title: CrewAI Field Guide
+    description: The CrewAI codebase, explained at the concept level — a multi-agent orchestration framework, from the kickoff and agent-executor loop to the hierarchical process, the flow scheduler, and where state lives.
+    link:
+      label: Read the guide
+      url: "crewai/the-big-picture/"
+
+  - icon: menu_book
+    title: n8n Field Guide
+    description: The n8n codebase, explained at the concept level — a workflow-automation engine, from how the engine decides what runs next and why the canvas is not the execution to partial executions, items and pairedItem, and triggers.
+    link:
+      label: Read the guide
+      url: "n8n/the-big-picture/"
+
   # The Doc Holiday product card sits deliberately last, blended into the guide
   # grid (same card treatment, not a distinct ad).
   - icon: build/doc-holiday

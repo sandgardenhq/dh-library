@@ -1,0 +1,27 @@
+# Sidebar structure for the docs section. The theme builds each link as
+# /docs/<urlize(title)>/ — so every `title` here must urlize to the same slug
+# as the corresponding page's `url` front matter.
+- title: Orientation
+  pages:
+    - title: The Big Picture
+    - title: Anatomy of a Query
+    - title: Anatomy of Ingestion
+
+- title: Ingestion
+  pages:
+    - title: The Chunking Template Zoo
+    - title: DeepDoc
+
+- title: Retrieval
+  pages:
+    - title: The Embedding Layer
+    - title: The Document Engine Abstraction
+    - title: GraphRAG
+
+- title: Agents
+  pages:
+    - title: The Canvas Orchestrator
+
+- title: Meta
+  pages:
+    - title: About This Site

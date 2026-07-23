@@ -13,3 +13,23 @@ strix:
   name: Strix Field Guide
   logo: strix-logo.svg
   repo: https://github.com/usestrix/strix
+browser-use:
+  name: browser-use Field Guide
+  logo: browser-use-logo.svg
+  repo: https://github.com/browser-use/browser-use
+ragflow:
+  name: RAGFlow Field Guide
+  logo: ragflow-logo.svg
+  repo: https://github.com/infiniflow/ragflow
+dify:
+  name: Dify Field Guide
+  logo: dify-logo.svg
+  repo: https://github.com/langgenius/dify
+crewai:
+  name: CrewAI Field Guide
+  logo: crewai-logo.svg
+  repo: https://github.com/crewAIInc/crewAI
+n8n:
+  name: n8n Field Guide
+  logo: n8n-logo.svg
+  repo: https://github.com/n8n-io/n8n
