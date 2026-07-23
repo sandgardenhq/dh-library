@@ -50,7 +50,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build
-        run: hugo --gc --minify --baseURL "${{ env.PUBLIC_BASE_URL }}"
+        # TRANSITIONARY (2026-07-22): serve directly from GitHub Pages, no proxy yet.
+        # Build self-consistent at the real Pages URL. Revert to
+        # "${{ env.PUBLIC_BASE_URL }}" once the doc.holiday /library/ proxy is live.
+        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v4
