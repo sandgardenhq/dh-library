@@ -52,6 +52,20 @@ items:
       label: Read the guide
       url: "n8n/the-big-picture/"
 
+  - icon: menu_book
+    title: Letta Field Guide
+    description: The Letta v2 codebase, explained at the concept level — a stateful agent harness, from the turn lifecycle and per-conversation queues to memory blocks, the git-tracked memory filesystem, dreaming, and client-side tools.
+    link:
+      label: Read the guide
+      url: "letta/the-big-picture/"
+
+  - icon: menu_book
+    title: LangGraph Field Guide
+    description: The LangGraph codebase, explained at the concept level — a durable agent runtime, from the superstep engine and the version-trigger mechanism to how state compiles to channels, control flow, and what checkpoints really store.
+    link:
+      label: Read the guide
+      url: "langgraph/the-big-picture/"
+
   # The Doc Holiday product card sits deliberately last, blended into the guide
   # grid (same card treatment, not a distinct ad).
   - icon: build/doc-holiday

@@ -1,0 +1,23 @@
+# LangGraph Field Guide
+
+> A concept-level field guide to the LangGraph codebase, written by Doc Holiday
+> (https://doc.holiday) by exploring the LangGraph source directly. Each page explains
+> why a subsystem exists, its central abstractions, and how it relates to its neighbors.
+> Every doc page is also served as plain markdown at <page-url>/index.md.
+
+## Pages
+
+- [The Big Picture](https://doc.holiday/library/langgraph/the-big-picture/): the map of the LangGraph monorepo — builder, engine, persistence, and the platform boundary
+- [Anatomy of an Invoke](https://doc.holiday/library/langgraph/anatomy-of-an-invoke/): one graph.invoke() traced end to end through the superstep loop
+- [What Runs Next](https://doc.holiday/library/langgraph/what-runs-next/): the version-trigger mechanism — how channel_versions and versions_seen schedule nodes
+- [Your State Compiles to Channels](https://doc.holiday/library/langgraph/your-state-compiles-to-channels/): how a state schema becomes channel objects — reducers, the channel zoo, and when each errors
+- [Control Flow Is Channels Too](https://doc.holiday/library/langgraph/control-flow-is-channels-too/): edges, branches, Send, and Command — how topology compiles away into channels and tasks
+- [Why Checkpoints Look Like That](https://doc.holiday/library/langgraph/why-checkpoints-look-like-that/): the checkpoint format's design rationale — snapshots plus version bookkeeping
+- [Replay, Resume, and Idempotency](https://doc.holiday/library/langgraph/replay-resume-and-idempotency/): what durable execution guarantees and the side-effect contract
+- [One Engine, Two APIs](https://doc.holiday/library/langgraph/one-engine-two-apis/): what @entrypoint and @task compile to — the same Pregel engine
+- [About This Site](https://doc.holiday/library/langgraph/about-this-site/): scope, audience, provenance
+
+## See also
+
+- Official LangGraph documentation: https://docs.langchain.com/oss/python/langgraph/overview
+- LangGraph source: https://github.com/langchain-ai/langgraph

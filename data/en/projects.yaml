@@ -33,3 +33,11 @@ n8n:
   name: n8n Field Guide
   logo: n8n-logo.svg
   repo: https://github.com/n8n-io/n8n
+letta:
+  name: Letta Field Guide
+  logo: letta-logo.svg
+  repo: https://github.com/letta-ai/letta-code
+langgraph:
+  name: LangGraph Field Guide
+  logo: langgraph-logo.svg
+  repo: https://github.com/langchain-ai/langgraph
