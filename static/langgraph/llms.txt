@@ -3,7 +3,7 @@
 > A concept-level field guide to the LangGraph codebase, written by Doc Holiday
 > (https://doc.holiday) by exploring the LangGraph source directly. Each page explains
 > why a subsystem exists, its central abstractions, and how it relates to its neighbors.
-> Every doc page is also served as plain markdown at <page-url>/index.md.
+> Every doc page is also served as plain Markdown — append `/index.md` to any page URL.
 
 ## Pages
 

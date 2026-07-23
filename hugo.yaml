@@ -1,5 +1,5 @@
 # Site config for the Doc Holiday Library — a single Hugo site hosting every
-# leadgen field guide as its own content section (content/en/<project>/…).
+# project's field guide as its own content section (content/en/<project>/…).
 # The E25DX theme routes sidebars, links, and the section menu off .Section, so
 # adding a project = a new content/en/<project>/ dir + data/en/<project>/sidebar.yml
 # + a menu entry whose identifier matches the section name.

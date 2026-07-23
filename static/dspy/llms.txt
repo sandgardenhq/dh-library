@@ -3,7 +3,7 @@
 > A concept-level field guide to the DSPy codebase, written by Doc Holiday
 > (https://doc.holiday) by exploring the DSPy source directly. Each page explains why a
 > subsystem exists, its central abstractions, and how it relates to its neighbors.
-> Every doc page is also served as plain markdown at <page-url>/index.md.
+> Every doc page is also served as plain Markdown — append `/index.md` to any page URL.
 
 ## Pages
 
@@ -12,6 +12,7 @@
 - [The LM Layer](https://doc.holiday/library/dspy/the-lm-layer/): how a model string becomes a provider request
 - [Caching](https://doc.holiday/library/dspy/caching/): the cache, its key, and its footguns
 - [What Compile Does](https://doc.holiday/library/dspy/what-compile-does/): what optimizers actually mutate
+- [Inside MIPROv2](https://doc.holiday/library/dspy/inside-miprov2/): the flagship optimizer's mechanism — bootstrapped demos, proposed instructions, and Optuna-guided search
 - [The Proposer](https://doc.holiday/library/dspy/the-proposer/): how DSPy writes instruction candidates
 - [Streaming](https://doc.holiday/library/dspy/streaming/): token streaming vs typed parsing
 - [Production](https://doc.holiday/library/dspy/production/): callbacks, usage tracking, parallelism

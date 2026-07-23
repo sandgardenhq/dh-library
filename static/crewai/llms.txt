@@ -4,7 +4,7 @@
 > what actually happens when a crew or flow runs. Written by Doc Holiday
 > (https://doc.holiday) by exploring the CrewAI source directly. Each page explains why a
 > subsystem exists, how it behaves at runtime, and how it relates to its neighbors.
-> Every doc page is also served as plain markdown at <page-url>/index.md.
+> Every doc page is also served as plain Markdown — append `/index.md` to any page URL.
 
 ## Pages
 

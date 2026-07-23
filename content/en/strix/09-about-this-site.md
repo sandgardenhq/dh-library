@@ -20,7 +20,7 @@ Doc Holiday (https://doc.holiday) wrote this guide by exploring the Strix source
 
 This guide captures a snapshot of an actively developed codebase pinned to a specific OpenAI Agents SDK version. Because the repository pins that SDK release, the guide reflects current behavior rather than a permanent contract. The official docs remain the authoritative reference for installation, usage, configuration, and the Skills concept. The [official Skills guide](https://docs.strix.ai/advanced/skills) covers that topic in its own right, so this page only mentions it as part of the wider documentation set. It leaves installation, usage, configuration, and Skills to the official docs, which already cover those topics in detail. It stays at the concept level, so it names the moving parts without reproducing reference tables or setup steps.
 
-commit 8cd9abb (2026-07-20)
+This guide was written against a snapshot of the Strix source, commit `8cd9abb` (2026-07-20) of https://github.com/usestrix/strix.
 
 Corrections and updates are welcome through the site repository at https://github.com/sandgardenhq/dh-library.
 

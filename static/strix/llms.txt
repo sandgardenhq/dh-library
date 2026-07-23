@@ -4,7 +4,7 @@
 > (https://doc.holiday) by exploring the Strix source directly. Strix is an open-source
 > autonomous AI penetration-testing tool built on the OpenAI Agents SDK. Each page explains
 > why a subsystem exists, its central abstractions, and how it relates to its neighbors.
-> Every doc page is also served as plain markdown at <page-url>/index.md.
+> Every doc page is also served as plain Markdown — append `/index.md` to any page URL.
 
 ## Pages
 

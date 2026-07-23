@@ -24,15 +24,19 @@ Doc Holiday ([doc.holiday](https://doc.holiday)) is an AI documentation writer. 
 
 The result gives a map of the codebase rather than a second manual. It helps readers orient themselves before they trace individual functions or study implementation details. It also keeps the language aligned with the repository, so the same term means the same thing in prose and in code.
 
+This guide was written against a snapshot of the DSPy source, commit `80fce4cc` (2026-07-04) of https://github.com/stanfordnlp/dspy. The codebase changes over time, so the pages capture a snapshot rather than a fixed contract, and the official docs remain authoritative.
+
+Corrections and updates are welcome through the site repository at https://github.com/sandgardenhq/dh-library.
+
 ## Site map
 
-- [00-the-big-picture.md](./00-the-big-picture.md) — the `Signature`→`Module`→`Adapter`→`LM` spine
-- [01-anatomy-of-a-call.md](./01-anatomy-of-a-call.md) — end-to-end trace of one `Module` call
-- [02-the-lm-layer.md](./02-the-lm-layer.md) — the `clients/` package
-- [03-caching.md](./03-caching.md) — the cache and its footguns
-- [04-what-compile-does.md](./04-what-compile-does.md) — the `Module`/`Parameter` tree and what optimizers actually change
-- [05-inside-miprov2.md](./05-inside-miprov2.md) — the flagship optimizer’s mechanism
-- [06-the-proposer.md](./06-the-proposer.md) — how optimizers write instruction candidates
-- [07-streaming.md](./07-streaming.md) — `streamify`, listeners, status messages
-- [08-production.md](./08-production.md) — callbacks, usage tracking, parallel execution
-- [09-about-this-site.md](./09-about-this-site.md) — this page
+- [The big picture](./00-the-big-picture.md) — the `Signature`→`Module`→`Adapter`→`LM` spine
+- [Anatomy of a call](./01-anatomy-of-a-call.md) — end-to-end trace of one `Module` call
+- [The LM layer](./02-the-lm-layer.md) — the `clients/` package
+- [Caching](./03-caching.md) — the cache and its footguns
+- [What compile does](./04-what-compile-does.md) — the `Module`/`Parameter` tree and what optimizers actually change
+- [Inside MIPROv2](./05-inside-miprov2.md) — the flagship optimizer’s mechanism
+- [The proposer](./06-the-proposer.md) — how optimizers write instruction candidates
+- [Streaming](./07-streaming.md) — `streamify`, listeners, status messages
+- [Production](./08-production.md) — callbacks, usage tracking, parallel execution
+- [About this site](./09-about-this-site.md) — this page
