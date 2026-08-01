@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="catalog">
+  {{ partial "topbar.html" . }}
+  <section class="band band-white">
+    <div class="container masthead">
+      <h1>Page not found.</h1>
+      <p class="masthead-lede">This page isn’t in the Library. The index has every guide that is.</p>
+      <div class="masthead-byline"><a href="{{ site.Home.RelPermalink }}">Browse the Library →</a></div>
+    </div>
+  </section>
+  {{ partial "footer.html" . }}
+</body>
+</html>

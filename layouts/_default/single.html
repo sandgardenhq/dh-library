@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+
+{{/* ---- guide context ----
+     Project chrome from data/en/projects.yaml (keyed by .Section); nav order,
+     groups, prev/next and progress from data/en/<section>/sidebar.yml. Slugs
+     derive from titles exactly as links are built (urlize, dots → dashes), so
+     every sidebar title must keep urlizing to the page's `url` front matter. */}}
+{{ $proj := index hugo.Data site.Language.Lang "projects" .Section }}
+{{ $sidebar := index hugo.Data site.Language.Lang .Section "sidebar" }}
+{{ $parts := split .RelPermalink "/" }}
+{{ $slug := index $parts (sub (len $parts) 2) }}
+{{ $flat := slice }}
+{{ range $g := $sidebar }}
+  {{ range $g.pages }}
+    {{ $s := .title | urlize | replaceRE `\.` "-" }}
+    {{ $flat = $flat | append (dict "title" .title "slug" $s "group" $g.title) }}
+  {{ end }}
+{{ end }}
+{{ $total := len $flat }}
+{{ $idx := -1 }}
+{{ range $i, $e := $flat }}{{ if eq $e.slug $slug }}{{ $idx = $i }}{{ end }}{{ end }}
+{{ $group := "" }}{{ if ge $idx 0 }}{{ $group = (index $flat $idx).group }}{{ end }}
+{{ $prev := false }}{{ $next := false }}
+{{ if gt $idx 0 }}{{ $prev = index $flat (sub $idx 1) }}{{ end }}
+{{ if and (ge $idx 0) (lt (add $idx 1) $total) }}{{ $next = index $flat (add $idx 1) }}{{ end }}
+{{ $pct := 0 }}{{ if and (ge $idx 0) (gt $total 0) }}{{ $pct = div (mul (add $idx 1) 100) $total }}{{ end }}
+{{ $content := .Content }}
+
+<body class="guide">
+  <script>(function(){try{var p=JSON.parse(localStorage.getItem('dhLibraryPrefs')||'null')||{};if(p.theme&&p.theme!=='light')document.body.setAttribute('data-rt',p.theme);if(p.scale&&p.scale!==1)document.body.style.setProperty('--rd',p.scale);}catch(e){}})();</script>
+
+  {{ partial "topbar.html" . }}
+
+  {{/* ---- sticky breadcrumb bar ---- */}}
+  <div class="guidebar">
+    <div class="guidebar-inner">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open guide navigation">▤</button>
+      <div class="crumbs">
+        <a class="lib" href="{{ site.Home.RelPermalink }}">Library</a>
+        <span class="sep">/</span>
+        <span class="here">{{ with $proj }}{{ .name }} Field Guide{{ else }}{{ .Title }}{{ end }}</span>
+      </div>
+      <div class="tools">
+        <div class="pillgroup" id="scale-group" title="Text size">
+          <button class="aa-sm" id="scale-down" aria-label="Smaller text">Aa</button>
+          <button class="aa-lg" id="scale-up" aria-label="Larger text">Aa</button>
+        </div>
+        <div class="pillgroup" id="theme-group" title="Reading theme">
+          <button data-theme="light" class="active">Light</button>
+          <button data-theme="paper">Paper</button>
+          <button data-theme="dark">Dark</button>
+        </div>
+        <a class="gh-link" href="https://github.com/sandgardenhq/dh-library">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-shell">
+
+    {{/* ---- left sidebar ---- */}}
+    <aside class="guide-nav" id="guide-nav">
+      <button class="nav-close" id="nav-close" aria-label="Close guide navigation">✕</button>
+      <div class="proj-name">{{ with $proj }}{{ .name }}{{ else }}{{ .Section }}{{ end }}</div>
+      {{ with $proj }}<div class="proj-repo"><a href="https://github.com/{{ .repo }}">{{ .repo }}</a></div>{{ end }}
+      <div class="progress-head">
+        <span>Page {{ add $idx 1 }} of {{ $total }}</span><span>{{ $pct }}%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" style="width:{{ $pct }}%"></div></div>
+      <nav>
+        {{ range $g := $sidebar }}
+        <div>
+          <div class="nav-group-title"><span>{{ $g.title }}</span><span class="n">{{ len $g.pages }}</span></div>
+          <div class="nav-items">
+            {{ range $g.pages }}
+            {{ $s := .title | urlize | replaceRE `\.` "-" }}
+            <a class="nav-item{{ if eq $s $slug }} active{{ end }}" href="{{ printf "%s%s/%s/" site.Home.RelPermalink $.Section $s }}">
+              <span class="dot">●</span><span>{{ .title }}</span>
+            </a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </nav>
+    </aside>
+
+    {{/* ---- article ---- */}}
+    <main class="guide-main">
+      <article class="article">
+        <div class="crumb">{{ with $proj }}{{ .name }}{{ else }}{{ .Section }}{{ end }}{{ with $group }} · {{ . }}{{ end }}</div>
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+        <div class="meta-row">
+          <span>{{ .ReadingTime }} min read</span><span>·</span><span>updated {{ .Lastmod.Format "2006-01-02" }}</span>
+        </div>
+        <div class="article-body">
+          {{ $content }}
+        </div>
+      </article>
+
+      <div class="pager">
+        {{ if $prev }}
+        <a class="all" href="{{ printf "%s%s/%s/" site.Home.RelPermalink .Section $prev.slug }}">← {{ $prev.title }}</a>
+        {{ else }}
+        <a class="all" href="{{ site.Home.RelPermalink }}">← All guides</a>
+        {{ end }}
+        {{ if $next }}
+        <span class="next-label">Next · {{ $next.group }}</span>
+        <a class="next" href="{{ printf "%s%s/%s/" site.Home.RelPermalink .Section $next.slug }}">{{ $next.title }} →</a>
+        {{ end }}
+      </div>
+    </main>
+
+    {{/* ---- right TOC rail ---- */}}
+    {{ $headings := .Fragments.Headings }}
+    <aside class="guide-toc">
+      {{ if gt (len $headings) 0 }}
+      <div class="toc-title">On this page</div>
+      {{ .TableOfContents }}
+      {{ end }}
+      <div class="toc-meta">
+        <span class="updated">Updated {{ .Lastmod.Format "2006-01-02" }}</span>
+        {{ with .File }}<a href="https://github.com/sandgardenhq/dh-library/blob/main/content/en/{{ .Path }}">Edit on GitHub ↗</a>{{ end }}
+        <a href="mailto:engineering@sandgarden.com?subject=Doc%20Holiday%20Library%3A%20error%20report">Report an error ↗</a>
+      </div>
+    </aside>
+  </div>
+
+  {{ partial "promo.html" (dict "page" . "variant" "guide") }}
+  {{ partial "footer.html" . }}
+
+  <div class="toast" id="toast">copied</div>
+
+  {{ $js := resources.Get "js/site.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+
+  {{- /* Mermaid: render-codeblock-mermaid.html sets the store flag while
+       .Content renders ($content above), so the check is reliable here. */}}
+  {{ if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
+    mermaid.run({ nodes: document.querySelectorAll('pre.mermaid') });
+  </script>
+  {{ end }}
+</body>
+</html>

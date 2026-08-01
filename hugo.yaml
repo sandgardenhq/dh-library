@@ -1,8 +1,9 @@
 # Site config for the Doc Holiday Library — a single Hugo site hosting every
 # project's field guide as its own content section (content/en/<project>/…).
-# The E25DX theme routes sidebars, links, and the section menu off .Section, so
-# adding a project = a new content/en/<project>/ dir + data/en/<project>/sidebar.yml
-# + a menu entry whose identifier matches the section name.
+# No theme: layouts/ carries the two page shapes (home.html = catalog,
+# _default/single.html = guide page), styled by the design-system tokens in
+# assets/css/. Adding a project = a new content/en/<project>/ dir +
+# data/en/<project>/sidebar.yml + a data/en/projects.yaml entry.
 #
 # baseURL is the PUBLIC path the site is served at (doc.holiday/library/), NOT the
 # GitHub Pages URL: the netlify proxy rewrites /library/* → <pages>/dh-library/*
@@ -10,8 +11,6 @@
 # must be /library/-rooted. `hugo server` ignores the host; pass --baseURL to test
 # the subpath locally.
 baseURL: https://doc.holiday/library/
-
-theme: E25DX
 
 enableGitInfo: true
 enableRobotsTXT: true
@@ -30,10 +29,6 @@ languages:
     params:
       description: Concept-level field guides to open-source codebases, written by Doc Holiday
 
-services:
-  googleAnalytics:
-    ID: ~
-
 markup:
   highlight:
     noClasses: false
@@ -45,8 +40,10 @@ markup:
         block: true
         title: true
     # Relative *.md cross-links between the generated pages are resolved to
-    # page URLs by layouts/_markup/render-link.html (overrides the theme hook).
+    # page URLs by layouts/_markup/render-link.html.
   tableOfContents:
+    startLevel: 2
+    endLevel: 3
     pre: <nav id="TableOfContents" aria-label="Table of Contents">
     post: </nav>
 
@@ -65,37 +62,6 @@ outputs:
     - markdown
 
 params:
-  project:
-    startYear: ~
-    presentYear: 2026
-    repo:
-      # Per-section overrides live in each project's page front matter / logo;
-      # this is the library's own home.
-      main: https://github.com/sandgardenhq/dh-library
-    themeColor:
-      light: '#ffffff'
-      dark: '#14161a'
-
   author:
     name: doc.holiday
     url: https://doc.holiday
-
-  logo: /logo.svg
-
-  pagination:
-    size: 6
-
-  enableOGXSEO: false
-  enablePageFind: false
-
-menus:
-  main:
-    # Single Home entry only — a per-project menu would not scale past ~10 guides.
-    # Project chrome (logo/name/repo) comes from data/en/projects.yaml keyed by
-    # .Section, so the sidebar no longer depends on a per-section menu entry.
-    - identifier: home
-      name: Home
-      url: /
-      weight: 1
-      params:
-        icon: home

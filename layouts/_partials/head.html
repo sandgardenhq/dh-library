@@ -1,0 +1,44 @@
+{{- /*
+  Shared <head> for both page shapes. Context: the page.
+  Carries the load-bearing bits from the old theme setup:
+  - favicons partial (assets/favicon.png pipeline)
+  - rel="alternate" Markdown link (every content page also renders at
+    <url>/index.md via outputs.page = [html, markdown] in hugo.yaml)
+  - the CSS bundle; font files resolve relative to the bundle (../fonts/…),
+    so the /library/ subpath survives without absolute URLs.
+*/ -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- $desc := .Description | default site.Params.description }}
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ site.Params.author.name }}">
+<meta name="theme-color" content="#080B20">
+{{ with .Params.robots }}<meta name="robots" content="{{ . }}">{{ end }}
+
+{{- if .IsHome }}
+<title>{{ site.Title }} · {{ site.Params.description }}</title>
+{{- else }}
+{{- $proj := index hugo.Data site.Language.Lang "projects" .Section }}
+<title>{{ .Title }} · {{ with $proj }}{{ .name }} Field Guide · {{ end }}{{ site.Title }}</title>
+{{- end }}
+<link rel="canonical" href="{{ .Permalink }}">
+
+<meta property="og:title" content="{{ .Title | default site.Title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+
+{{ partial "favicons.html" . }}
+
+{{ with .OutputFormats.Get "markdown" }}
+<link rel="alternate" type="text/markdown" href="{{ .Permalink }}" title="{{ $.Title }} (Markdown)">
+{{ end }}
+
+{{- $css := slice
+  (resources.Get "css/tokens.css")
+  (resources.Get "css/fonts.css")
+  (resources.Get "css/syntax.css")
+  (resources.Get "css/main.css")
+  | resources.Concat "css/site.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">

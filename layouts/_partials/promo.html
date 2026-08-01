@@ -1,0 +1,26 @@
+{{- /*
+  Navy promo band. Call with (dict "page" . "variant" "index"|"guide").
+  Copy approved by Joel 2026-07-31 (redesign canvas, verbatim).
+*/ -}}
+{{- $variant := .variant }}
+<section class="band band-navy promo">
+  <div class="container">
+    {{- if eq $variant "guide" }}
+    <h2>You just read docs <em>nobody</em> wrote.</h2>
+    <p class="promo-lede">Doc Holiday built this page out of the repo itself: commits, PRs, issues. Point it at your own repo and it opens a pull request with the docs already written. You review it, you merge it, you go back to writing code.</p>
+    {{- else }}
+    <h2>Nobody wrote <em>any</em> of these.</h2>
+    <p class="promo-lede">The Library is the demo. We pointed Doc Holiday at other people's open source repos and let it read the commits, PRs and issues. Point it at yours and it opens a pull request with the docs already written. You review it, you merge it, you go back to writing code.</p>
+    {{- end }}
+    <div class="promo-ctas">
+      <a class="btn" href="https://doc.holiday/">Point it at your repo&nbsp;&nbsp;→</a>
+      <a class="btn btn-ghost" href="mailto:engineering@sandgarden.com">Suggest a repo</a>
+    </div>
+    <p class="promo-free"><strong>Free on every public repo.</strong> You bring your own API key, and that is the entire bill.</p>
+    {{- if eq $variant "guide" }}
+    <div class="promo-mono">no card · no trial · no sales call</div>
+    {{- else }}
+    <div class="promo-rule">this index is the only page in the Library a human wrote.</div>
+    {{- end }}
+  </div>
+</section>

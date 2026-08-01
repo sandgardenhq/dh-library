@@ -1,0 +1,183 @@
+:root{
+  /* ---------- base palette ---------- */
+  --dh-navy-900:#080B20;      /* deepest — footer */
+  --dh-navy-800:#0B0F2A;      /* primary dark band */
+  --dh-navy-700:#151527;      /* mock window chrome */
+  --dh-ink:#1A1A2E;           /* body text on light */
+  --dh-white:#FFFFFF;
+
+  --dh-pink-500:#FF0096;      /* the brand accent. one job: emphasis */
+  --dh-teal-400:#1BB7D1;      /* accent on dark, secondary action */
+  --dh-teal-800:#0B7186;      /* accent on light, link colour */
+  --dh-green-400:#6FC34F;     /* success / additive */
+
+  --dh-ice-100:#E9F5F8;       /* light band */
+  --dh-ice-50:#F3F9FA;        /* inset well inside a white card */
+  --dh-ice-75:#F1F6F8;        /* stat tile / inactive chip */
+
+  /* diff + severity inks (mock UI only) */
+  --dh-ink-green:#3A8F2A;
+  --dh-ink-green-deep:#2C6B1E;
+  --dh-ink-red:#C0392B;
+  --dh-ink-magenta:#A3306B;
+
+  /* ---------- alpha ramps ---------- */
+  --dh-ink-a04:rgba(26,26,46,.04);
+  --dh-ink-a07:rgba(26,26,46,.07);
+  --dh-ink-a08:rgba(26,26,46,.08);
+  --dh-ink-a10:rgba(26,26,46,.10);
+  --dh-ink-a38:rgba(26,26,46,.38);
+  --dh-ink-a45:rgba(26,26,46,.45);
+  --dh-ink-a55:rgba(26,26,46,.55);
+  --dh-ink-a62:rgba(26,26,46,.62);
+  --dh-ink-a66:rgba(26,26,46,.66);
+
+  --dh-white-a06:rgba(255,255,255,.06);
+  --dh-white-a10:rgba(255,255,255,.10);
+  --dh-white-a12:rgba(255,255,255,.12);
+  --dh-white-a14:rgba(255,255,255,.14);
+  --dh-white-a35:rgba(255,255,255,.35);
+  --dh-white-a45:rgba(255,255,255,.45);
+  --dh-white-a62:rgba(255,255,255,.62);
+  --dh-white-a66:rgba(255,255,255,.66);
+  --dh-white-a82:rgba(255,255,255,.82);
+
+  --dh-teal-a12:rgba(27,183,209,.12);
+  --dh-teal-a28:rgba(27,183,209,.28);
+  --dh-pink-a07:rgba(255,0,150,.07);
+  --dh-green-a16:rgba(111,195,79,.16);
+
+  /* ---------- semantic aliases ---------- */
+  --dh-text-strong:var(--dh-ink);
+  --dh-text-body:var(--dh-ink-a66);
+  --dh-text-muted:var(--dh-ink-a55);
+  --dh-text-faint:var(--dh-ink-a45);
+  --dh-text-on-dark:var(--dh-white);
+  --dh-text-on-dark-body:var(--dh-white-a66);
+  --dh-text-on-dark-muted:var(--dh-white-a45);
+
+  --dh-accent:var(--dh-pink-500);
+  --dh-accent-on-dark:var(--dh-teal-400);
+  --dh-link:var(--dh-teal-800);
+  --dh-link-hover:var(--dh-pink-500);
+  --dh-link-on-dark:var(--dh-teal-400);
+
+  --dh-surface-page:var(--dh-white);
+  --dh-surface-band-light:var(--dh-ice-100);
+  --dh-surface-band-dark:var(--dh-navy-800);
+  --dh-surface-card:var(--dh-white);
+  --dh-surface-well:var(--dh-ice-50);
+  --dh-surface-chrome:var(--dh-navy-700);
+
+  --dh-border-hairline:var(--dh-ink-a08);
+  --dh-border-hairline-dark:var(--dh-white-a10);
+  --dh-border-teal:var(--dh-teal-a28);
+}
+:root{
+  /* families — three, no more */
+  --dh-font-display:Poppins,sans-serif;      /* @kind font */ /* headings, numerals, product names */
+  --dh-font-body:Inter,sans-serif;           /* @kind font */ /* prose, buttons, nav */
+  --dh-font-mono:'JetBrains Mono',monospace; /* @kind font */ /* eyebrows, code, metadata, counts */
+
+  /* display scale — fluid, always Poppins 400 (500 for h3) */
+  --dh-h1:clamp(38px,4.8vw,62px); /* @kind font */
+  --dh-h1-lh:1.04; /* @kind font */
+  --dh-h1-ls:-0.03em; /* @kind font */
+  --dh-h2:clamp(30px,3.6vw,46px); /* @kind font */
+  --dh-h2-lh:1.12; /* @kind font */
+  --dh-h2-ls:-0.022em; /* @kind font */
+  --dh-h2-lg:clamp(30px,3.8vw,50px); /* @kind font */
+  --dh-h3:20px; /* @kind font */
+  --dh-h3-ls:-0.01em; /* @kind font */
+  --dh-h3-lh:1.26; /* @kind font */
+  --dh-quote:clamp(21px,2.2vw,28px); /* @kind font */
+  --dh-quote-lh:1.34; /* @kind font */
+  --dh-quote-ls:-0.018em; /* @kind font */
+  --dh-display-xl:clamp(38px,5.2vw,66px);   /* @kind font */ /* closing CTA */
+  --dh-display-xl-ls:-0.032em; /* @kind font */
+
+  /* body scale */
+  --dh-lede:18px; /* @kind font */
+  --dh-lede-lh:1.6; /* @kind font */
+  --dh-body:15px; /* @kind font */
+  --dh-body-lh:1.58; /* @kind font */
+  --dh-body-lg:16.5px; /* @kind font */
+  --dh-small:13.5px; /* @kind font */
+  --dh-small-lh:1.5; /* @kind font */
+  --dh-nav:14.5px; /* @kind font */
+
+  /* mono scale — the metadata voice */
+  --dh-eyebrow:11.5px; /* @kind font */
+  --dh-eyebrow-ls:.16em; /* @kind font */
+  --dh-mono-md:13px; /* @kind font */
+  --dh-mono-sm:11px; /* @kind font */
+  --dh-mono-xs:10px; /* @kind font */
+  --dh-mono-2xs:9px; /* @kind font */
+  --dh-mono-ls:.12em; /* @kind font */
+
+  --dh-weight-regular:400; /* @kind font */
+  --dh-weight-medium:500; /* @kind font */
+  --dh-weight-semibold:600; /* @kind font */
+}
+:root{
+  --dh-space-1:4px;
+  --dh-space-2:6px;
+  --dh-space-3:8px;
+  --dh-space-4:10px;
+  --dh-space-5:14px;
+  --dh-space-6:16px;
+  --dh-space-7:20px;
+  --dh-space-8:24px;
+  --dh-space-9:30px;
+  --dh-space-10:36px;
+  --dh-space-11:48px;
+  --dh-space-12:72px;
+
+  /* page frame */
+  --dh-container:1200px;       /* default band */
+  --dh-container-narrow:1000px;/* prose, demo, pricing */
+  --dh-gutter:20px;
+
+  /* vertical band rhythm — every section uses one of these */
+  --dh-band-y:clamp(52px,7.5vw,92px); /* @kind spacing */
+  --dh-band-y-tall:clamp(60px,8.5vw,108px); /* @kind spacing */
+  --dh-band-y-short:clamp(52px,7vw,86px); /* @kind spacing */
+
+  /* gaps */
+  --dh-gap-grid:24px;
+  --dh-gap-grid-wide:clamp(36px,5vw,56px);
+  --dh-heading-gap:clamp(34px,4.5vw,50px); /* heading block → grid */
+}
+:root{
+  /* radii — pill for actions, generous for cards, tight for mono chips */
+  --dh-radius-chip:5px;
+  --dh-radius-chip-lg:6px;
+  --dh-radius-btn-sq:7px;
+  --dh-radius-tile:10px;
+  --dh-radius-input:12px;
+  --dh-radius-well:14px;
+  --dh-radius-card:16px;
+  --dh-radius-card-lg:20px;
+  --dh-radius-pill:999px;
+
+  /* elevation */
+  --dh-shadow-card:0 4px 40px rgba(26,26,46,.07);
+  --dh-shadow-menu:0 14px 40px rgba(0,0,0,.30);
+  --dh-shadow-float:0 24px 70px rgba(0,0,0,.45);
+  --dh-shadow-hero:0 30px 80px rgba(0,0,0,.50);
+  --dh-shadow-panel:0 18px 50px rgba(11,15,42,.24);
+
+  /* coloured glows — only under a filled action */
+  --dh-glow-pink:0 10px 26px rgba(255,0,150,.34);
+  --dh-glow-pink-sm:0 6px 18px rgba(255,0,150,.30);
+  --dh-glow-teal:0 8px 22px rgba(27,183,209,.32);
+
+  /* the lit-navy band: pink top-right, teal bottom-left, never a linear gradient */
+  --dh-bg-navy-lit:radial-gradient(760px 560px at 88% 4%,rgba(255,0,150,.26),transparent 64%),radial-gradient(620px 500px at 0% 92%,rgba(27,183,209,.22),transparent 66%),#0B0F2A;
+  --dh-bg-navy-lit-soft:radial-gradient(700px 480px at 92% 8%,rgba(255,0,150,.20),transparent 65%),radial-gradient(600px 420px at 0% 100%,rgba(27,183,209,.16),transparent 65%),#0B0F2A;
+  --dh-bg-navy-lit-pink:radial-gradient(600px 440px at 94% 4%,rgba(255,0,150,.16),transparent 66%),#0B0F2A;
+
+  --dh-blur-nav:blur(14px); /* @kind other */
+  --dh-ease:cubic-bezier(.22,.61,.36,1); /* @kind other */
+  --dh-duration:160ms; /* @kind other */
+}

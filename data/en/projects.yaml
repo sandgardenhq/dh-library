@@ -1,43 +1,94 @@
-# Per-project chrome, keyed by content section (.Section). The header and
-# left-sidebar overrides look up the current project here; the library home
-# (empty .Section) falls back to the site defaults (logo.svg / site.Title).
+# Per-project catalog + chrome data, keyed by content section (.Section).
+# Used by home.html (catalog cards, facets) and _default/single.html (guide
+# sidebar + breadcrumb). Page counts, updated dates, peek lists, and entry
+# links are computed from the site itself; only curated facts live here.
 #
-# logo paths are slash-less on purpose: they are piped through `relURL`, which
-# leaves a leading-slash path host-relative and so would drop the /library/
-# Pages subpath (the G1 leading-slash gotcha). Slash-less → resolved under baseURL.
+# stars: raw stargazer count, refreshed manually (gh api repos/<repo>
+# --jq .stargazers_count). Last refresh: 2026-07-31.
 dspy:
-  name: DSPy Field Guide
-  logo: dspy-logo.svg
-  repo: https://github.com/stanfordnlp/dspy
+  name: DSPy
+  repo: stanfordnlp/dspy
+  stars: 36497
+  lang: Python
+  domain: Prompting
+  desc: >-
+    Programmatic prompting — Signature, Module, Adapter and the LM layer,
+    plus caching, compilation, the proposer, and streaming.
 strix:
-  name: Strix Field Guide
-  logo: strix-logo.svg
-  repo: https://github.com/usestrix/strix
+  name: Strix
+  repo: usestrix/strix
+  stars: 46202
+  lang: Python
+  domain: Security
+  desc: >-
+    An autonomous pentest app on the OpenAI Agents SDK — the agent graph,
+    the Docker sandbox, and the finding-to-report pipeline.
 browser-use:
-  name: browser-use Field Guide
-  logo: browser-use-logo.svg
-  repo: https://github.com/browser-use/browser-use
+  name: browser-use
+  repo: browser-use/browser-use
+  stars: 107421
+  lang: Python
+  domain: Agents
+  desc: >-
+    A browser-automation agent — the event bus and watchdogs, the CDP
+    execution layer, the action registry, and how the agent sees a page.
 ragflow:
-  name: RAGFlow Field Guide
-  logo: ragflow-logo.svg
-  repo: https://github.com/infiniflow/ragflow
+  name: RAGFlow
+  repo: infiniflow/ragflow
+  stars: 86526
+  lang: Python
+  domain: RAG
+  desc: >-
+    A deep-document RAG engine — the ingestion pipeline and chunking
+    templates through the embedding layer, GraphRAG, and the canvas
+    orchestrator.
 dify:
-  name: Dify Field Guide
-  logo: dify-logo.svg
-  repo: https://github.com/langgenius/dify
+  name: Dify
+  repo: langgenius/dify
+  stars: 150930
+  lang: TypeScript
+  domain: Workflow
+  desc: >-
+    An LLM app platform and its Graphon workflow engine — the graph
+    execution model, the variable system, pause/resume, the model runtime,
+    and plugins.
 crewai:
-  name: CrewAI Field Guide
-  logo: crewai-logo.svg
-  repo: https://github.com/crewAIInc/crewAI
+  name: CrewAI
+  repo: crewAIInc/crewAI
+  stars: 56436
+  lang: Python
+  domain: Agents
+  desc: >-
+    Multi-agent orchestration — kickoff and the agent-executor loop, the
+    hierarchical process, the flow scheduler, and where state actually
+    lives.
 n8n:
-  name: n8n Field Guide
-  logo: n8n-logo.svg
-  repo: https://github.com/n8n-io/n8n
+  name: n8n
+  repo: n8n-io/n8n
+  stars: 198884
+  lang: TypeScript
+  domain: Workflow
+  desc: >-
+    A workflow-automation engine — how it decides what runs next, why the
+    canvas is not the execution, partial executions, items and pairedItem,
+    triggers.
 letta:
-  name: Letta Field Guide
-  logo: letta-logo.svg
-  repo: https://github.com/letta-ai/letta-code
+  name: Letta
+  repo: letta-ai/letta-code
+  stars: 2936
+  lang: TypeScript
+  domain: Memory
+  desc: >-
+    A stateful agent harness — the turn lifecycle and per-conversation
+    queues, memory blocks, the git-tracked memory filesystem, dreaming, and
+    client-side tools.
 langgraph:
-  name: LangGraph Field Guide
-  logo: langgraph-logo.svg
-  repo: https://github.com/langchain-ai/langgraph
+  name: LangGraph
+  repo: langchain-ai/langgraph
+  stars: 38584
+  lang: Python
+  domain: Agents
+  desc: >-
+    A durable agent runtime — the superstep engine and version-trigger
+    mechanism, how state compiles to channels, control flow, and what
+    checkpoints store.
