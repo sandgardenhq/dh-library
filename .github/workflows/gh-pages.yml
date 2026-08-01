@@ -16,9 +16,10 @@ permissions:
   id-token: write
 
 env:
-  # Pinned: newer Hugo emits deprecation warnings from the E25DX theme
-  # (.Site.Data in 0.156, .Site.LanguageCode in 0.158). Bump alongside a theme update.
-  HUGO_VERSION: 0.155.0
+  # Pinned to the version the site is developed against. The 2026-07 redesign's
+  # layouts use site.Language.Locale and hugo.Data, which need >= 0.158; older
+  # pins fail the build outright.
+  HUGO_VERSION: 0.163.3
   # The PUBLIC serving path. This site lives behind the doc.holiday netlify proxy,
   # which rewrites /library/* → <this repo's Pages URL>/:splat with status 200 — so
   # the browser stays on doc.holiday and every internal link must be /library/-rooted.
