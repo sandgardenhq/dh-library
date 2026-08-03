@@ -110,7 +110,7 @@ button { font: inherit; }
    Catalog (home)
    ========================================================================== */
 
-.masthead { padding: clamp(40px, 6vw, 68px) 0 clamp(30px, 4.5vw, 48px); }
+.masthead { padding-block: clamp(40px, 6vw, 68px) clamp(30px, 4.5vw, 48px); }
 .masthead h1 {
   margin: 0; font-family: var(--dh-font-display); font-weight: 600;
   font-size: clamp(32px, 4.4vw, 50px); line-height: 1.06; letter-spacing: -.025em; color: var(--dh-ink);
