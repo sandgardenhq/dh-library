@@ -1,12 +1,12 @@
 {{- /*
-  Favicon set (teal blueprint-grid placeholder icons in assets/). Fonts are
-  self-hosted (assets/css/fonts.css → static/fonts/), so no external font
-  stylesheets load here.
+  Favicon set (doc.holiday palm-tree icons in assets/: favicon.png 32px,
+  apple-touch-icon.png 256px). Fonts are self-hosted (assets/css/fonts.css →
+  static/fonts/), so no external font stylesheets load here.
 */ -}}
 {{- $icon := resources.Get "favicon.png" -}}
 {{- $i32 := $icon.Resize "32x32 png" -}}
 {{- $i16 := $icon.Resize "16x16 png" -}}
-{{- $apple := resources.Get "apple-touch-icon.png" -}}
+{{- $apple := (resources.Get "apple-touch-icon.png").Resize "180x180 png" -}}
 <link rel="manifest" href="{{ "manifest.json" | relURL }}">
 <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
 <link rel="icon" href="{{ $i32.RelPermalink }}" sizes="32x32" type="image/png">

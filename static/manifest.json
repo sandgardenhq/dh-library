@@ -1,13 +1,13 @@
 {
   "name": "Doc Holiday Library",
   "short_name": "DH Library",
-  "start_url": "/",
+  "start_url": "/library/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "favicon.ico",
       "sizes": "48x48 32x32 16x16",
       "type": "image/x-icon"
     }
